@@ -7,7 +7,18 @@ const messages = [
     "Tú y yo, para siempre",
     "Mi corazón es tuyo 💖",
     "Siempre pienso en ti 💭",
-    "Tu sonrisa me ilumina ☀️"
+    "Tu sonrisa me ilumina ☀️",
+    "Eres mi lugar favorito en el mundo 🌎❤️",
+    "Contigo todo es más bonito ✨",
+    "Gracias por hacerme tan feliz cada día 😊",
+    "Eres el mejor regalo que me dio la vida 🎁",
+    "Me encantas de aquí hasta el infinito 🚀💖",
+    "Tu sonrisa es mi parte favorita del día ☀️",
+    "Te amo más que a nada ❤️",
+    "Siempre tú ♾️",
+    "Haces latir mi corazón fuerte 💓",
+    "Tú y yo, siempre 🥂",
+    "Te quiero muchísimo 🧸"
 ];
 
 function createBubble() {
@@ -16,25 +27,20 @@ function createBubble() {
     
     bubble.classList.add('bubble');
     
-    // Elegir un mensaje aleatorio
     const randomIndex = Math.floor(Math.random() * messages.length);
     bubble.innerText = messages[randomIndex];
     
-    // Posición horizontal aleatoria (0 a 90%)
     const xPos = Math.random() * 90;
     bubble.style.left = `${xPos}%`;
     
-    // Duración aleatoria para que no suban todos al mismo tiempo
-    const duration = Math.random() * 3 + 4; // Entre 4 y 7 segundos
+    const duration = Math.random() * 3 + 4; 
     bubble.style.animationDuration = `${duration}s`;
 
     container.appendChild(bubble);
 
-    // Borrar la burbuja después de que termine la animación
     setTimeout(() => {
         bubble.remove();
     }, duration * 1000);
 }
 
-// Crear una burbuja nueva cada 600 milisegundos
 setInterval(createBubble, 600);
